@@ -34,10 +34,6 @@ public class star {
 	public static double scaleY;
 	public static double scaleFactor;
 
-	public static double x_max = 0;
-	public static double x_min = 0;
-	public static double y_max = 0;
-	public static double y_min = 0;
 	static AtomicInteger counter = new AtomicInteger(0);
 
 	public static void main(String[] args) {
@@ -219,7 +215,7 @@ public class star {
 		System.out.println("iterating forward..");
 		Vertex tmp = head;
 		while(tmp != null){
-			System.out.println("(" + ((tmp.getX()*scaleFactor)+960.0) + ", " + ((tmp.getY()*scaleFactor)+540.0) + ")");
+			System.out.println("(" + ((tmp.getX()*scaleFactor)) + ", " + ((tmp.getY()*scaleFactor)) + ")");
 			tmp = tmp.next;
 		}
 	}
@@ -254,10 +250,10 @@ public class star {
 		double differenceX = Math.abs(maxX) - Math.abs(minX);
 		double differenceY = Math.abs(maxY) - Math.abs(minY);
 		
-		if(differenceX >= differenceY) {
-			scaleFactor = 540/maxX;
+		if(Math.abs(differenceX) >= Math.abs(differenceY)) {
+			scaleFactor = 540.0/maxX;
 		}else {
-			scaleFactor =960/maxY;
+			scaleFactor =960.0/maxY;
 		}
 		
 		

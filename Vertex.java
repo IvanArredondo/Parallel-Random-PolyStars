@@ -28,9 +28,6 @@ public class Vertex {
 	public double getY() {
 		return y;
 	}
-	
-
-
 
 	public synchronized void setNewVertex(double x, double y) {
 		this.x = x;
